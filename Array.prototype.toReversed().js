@@ -3,18 +3,12 @@
  * 与传统的 reverse() 方法不同，toReversed() 不会修改原始数组，而是返回一个反转后的新数组。
  */
 
-const arr = [1, 2, 3, 4, 5];
-const reversedArr = arr.reverse();
+const arr = [1, 2, 3];
 
-console.log("reverse():", {
-  originalArray: arr, // [5, 4, 3, 2, 1] - 原数组被修改
-  reversedArray: reversedArr, // [5, 4, 3, 2, 1] - 与原数组相同
-});
+// 1. reverse()（直接修改原数组）
+const reversed1 = arr.reverse();
+console.log(reversed1, arr); // [3, 2, 1] [3, 2, 1]（两者相同）
 
-const originalArray = [1, 2, 3, 4, 5];
-const reversedArray = originalArray.toReversed();
-
-console.log("toReversed():", {
-  originalArray, // [1, 2, 3, 4, 5] - 原数组保持不变
-  reversedArray, // [5, 4, 3, 2, 1] - 新数组，元素顺序反转
-});
+// 2. toReversed()（不修改原数组）
+const reversed2 = arr.toReversed();
+console.log(reversed2, arr); // [1, 2, 3] [3, 2, 1]（原数组不变）

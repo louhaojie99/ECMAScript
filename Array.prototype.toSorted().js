@@ -1,21 +1,17 @@
 /**
  * ECMAScript 2023 引入了新的数组方法 toSorted()，它提供了一种不可变的方式来对数组进行排序。
  */
+const arr = [3, 1, 4, 1, 5];
 
-const arr = [3, 1, 2];
-const sortedArr = arr.sort((a, b) => a - b);
+// 1. 传统 sort()（直接修改原数组）
+const arr1 = [...arr]; // 先复制一份
+arr1.sort((a, b) => a - b);
+console.log(arr, arr1);
+// 原数组 [3, 1, 4, 1, 5] 不变（因为复制了）
+// 新数组 [1, 1, 3, 4, 5]
 
-// 旧版本的数组 sort 方法排序过后返回一个新数组（也会影响原数组顺序）
-console.log("sort: ", {
-  arr,
-  sortedArr,
-});
-
-const newArr = [3, 1, 2];
-const sortedNewArr = newArr.toSorted((a, b) => a - b);
-
-// 新版本的数组 toSorted 方法排序过后返回一个新数组（不会影响原数组顺序）
-console.log("toSorted: ", {
-  newArr,
-  sortedNewArr,
-});
+// 2. 使用 toSorted()（不修改原数组，直接返回新数组）
+const arr2 = arr.toSorted((a, b) => a - b);
+console.log(arr, arr2);
+// 原数组 [3, 1, 4, 1, 5] 不变
+// 新数组 [1, 1, 3, 4, 5]
