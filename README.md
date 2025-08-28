@@ -1,2 +1,7 @@
-# ECMAScript2025
-ECMAScript2025 新特性！
+# ECMAScript
+
+ECMAScript 新特性！
+
+## Array
+
+ - [Array.prototype.toSorted](./Array.prototype.toSorted.js)
